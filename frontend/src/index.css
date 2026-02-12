@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 190 100% 95%;
+
+    --card: 222 44% 9%;
+    --card-foreground: 190 100% 95%;
+
+    --popover: 222 44% 9%;
+    --popover-foreground: 190 100% 95%;
+
+    --primary: 185 100% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 190 60% 80%;
+
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 130 100% 55%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 185 100% 50%;
+
+    --radius: 0.5rem;
+
+    --severity-critical: 0 85% 55%;
+    --severity-high: 25 95% 55%;
+    --severity-medium: 45 100% 50%;
+    --severity-low: 185 100% 50%;
+
+    --glow-cyan: 0 0 20px hsla(185, 100%, 50%, 0.3);
+    --glow-green: 0 0 20px hsla(130, 100%, 55%, 0.3);
+    --glow-critical: 0 0 15px hsla(0, 85%, 55%, 0.3);
+
+    --sidebar-background: 222 44% 7%;
+    --sidebar-foreground: 190 100% 95%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 190 100% 95%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 185 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(222 44% 9%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(222 30% 22%);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(185 100% 50% / 0.4);
+  }
+}
+
+@layer utilities {
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  .glow-green {
+    box-shadow: var(--glow-green);
+  }
+  .glow-critical {
+    box-shadow: var(--glow-critical);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsla(185, 100%, 50%, 0.5);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 10px hsla(130, 100%, 55%, 0.5);
+  }
+  .cyber-grid {
+    background-image:
+      linear-gradient(hsla(185, 100%, 50%, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(185, 100%, 50%, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .cyber-border {
+    border: 1px solid hsla(185, 100%, 50%, 0.15);
+  }
+}
